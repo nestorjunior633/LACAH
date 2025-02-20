@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz de Cardiologia</title>
+  <style>
+    /* Reset e configuração básica */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-top: 8px solid #b22222; /* vermelho */
+    }
+    h1 {
+      text-align: center;
+      color: #b22222;
+      margin-bottom: 20px;
+    }
+    h2 {
+      color: #002147; /* azul escuro */
+      margin-bottom: 10px;
+    }
+    .question {
+      margin-bottom: 25px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 15px;
+    }
+    .options {
+      list-style: none;
+      padding: 0;
+    }
+    .options li {
+      margin-bottom: 10px;
+    }
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #b22222;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 20px;
+    }
+    button:hover {
+      background: #8b0000;
+    }
+    #result {
+      text-align: center;
+      font-size: 20px;
+      margin-top: 20px;
+      color: #002147;
+      font-weight: bold;
+    }
+    .ad {
+      background: linear-gradient(135deg, #002147, #b22222);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+    .ad h3 {
+      margin-top: 0;
+      font-size: 24px;
+    }
+    .ad p {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .ad a {
+      color: #ffe4e1;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px solid #ffe4e1;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background 0.3s ease;
+    }
+    .ad a:hover {
+      background: #ffe4e1;
+      color: #002147;
+    }
+    .final-message {
+      background: #002147;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      border-radius: 8px;
+    }
+    .final-message h2 {
+      margin: 0;
+      font-size: 26px;
+    }
+    .final-message p {
+      font-size: 18px;
+      margin: 10px 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz de Cardiologia</h1>
+    <form id="quizForm">
+      <!-- Questões Fáceis -->
+      <div class="question">
+        <h2>1. Qual é a válvula cardíaca situada entre o átrio esquerdo e o ventrículo esquerdo?</h2>
+        <ul class="options">
+          <li><label><input type="radio" name="q1" value="a"> a) Tricúspide</label></li>
+          <li><label><input type="radio" name="q1" value="b"> b) Pulmonar</label></li>
+          <li><label><input type="radio" name="q1" value="c"> c) Mitral</label></li>
+          <li><label><input type="radio" name="q1" value="d"> d) Aórtica</label></li>
+        </ul>
+      </div>
+
+      <div class="question">
+        <h2>2. Qual é a principal artéria que sai do coração e distribui o sangue oxigenado para o corpo?</h2>
+        <ul class="options">
+          <li><label><input type="radio" name="q2" value="a"> a) Artéria pulmonar</label></li>
+          <li><label><input type="radio" name="q2" value="b"> b) Veia cava</label></li>
+          <li><label><input type="radio" name="q2" value="c"> c) Artéria coronária</label></li>
+          <li><label><input type="radio" name="q2" value="d"> d) Aorta</label></li>
+        </ul>
+      </div>
+
+      <!-- Questões Médias -->
+      <div class="question">
+        <h2>3. Qual das seguintes drogas é um beta-bloqueador utilizado no tratamento da hipertensão arterial e insuficiência cardíaca?</h2>
+        <ul class="options">
+          <li><label><input type="radio" name="q3" value="a"> a) Enalapril</label></li>
+          <li><label><input type="radio" name="q3" value="b"> b) Furosemida</label></li>
+          <li><label><input type="radio" name="q3" value="c"> c) Metoprolol</label></li>
+          <li><label><input type="radio" name="q3" value="d"> d) Amlodipino</label></li>
+        </ul>
+      </div>
+
+      <div class="question">
+        <h2>4. Na insuficiência cardíaca com fração de ejeção reduzida, qual das seguintes classes de medicamentos é fundamental para o manejo a longo prazo?</h2>
+        <ul class="options">
+          <li><label><input type="radio" name="q4" value="a"> a) Inibidores da ECA</label></li>
+          <li><label><input type="radio" name="q4" value="b"> b) Antagonistas do canal de cálcio</label></li>
+          <li><label><input type="radio" name="q4" value="c"> c) Bloqueadores dos receptores H2</label></li>
+          <li><label><input type="radio" name="q4" value="d"> d) Inibidores da bomba de prótons</label></li>
+        </ul>
+      </div>
+
+      <!-- Questões Difíceis -->
+      <div class="question">
+        <h2>5. Um paciente com síndrome coronariana aguda sem supradesnivelamento do segmento ST deve receber qual das seguintes combinações de antiagregação plaquetária na ausência de contraindicações?</h2>
+        <ul class="options">
+          <li><label><input type="radio" name="q5" value="a"> a) AAS + Clopidogrel</label></li>
+          <li><label><input type="radio" name="q5" value="b"> b) Varfarina + Heparina</label></li>
+          <li><label><input type="radio" name="q5" value="c"> c) AAS + Rivaroxabana</label></li>
+          <li><label><input type="radio" name="q5" value="d"> d) Heparina + Enoxaparina</label></li>
+        </ul>
+      </div>
+
+      <div class="question">
+        <h2>6. No choque cardiogênico, qual das seguintes medidas é contraindicada?</h2>
+        <ul class="options">
+          <li><label><input type="radio" name="q6" value="a"> a) Administração de noradrenalina para manter a perfusão</label></li>
+          <li><label><input type="radio" name="q6" value="b"> b) Uso de diuréticos em hipervolemia associada à insuficiência cardíaca</label></li>
+          <li><label><input type="radio" name="q6" value="c"> c) Uso de betabloqueadores intravenosos</label></li>
+          <li><label><input type="radio" name="q6" value="d"> d) Suporte ventilatório para correção de hipoxemia</label></li>
+        </ul>
+      </div>
+
+      <!-- Liga Acadêmica -->
+      <div class="question">
+        <h2>7. Quer se aprofundar em cardiologia com experiências práticas e aprendizado teórico de alto nível? A Liga Acadêmica de Cardiologia e Hipertensão oferece:</h2>
+        <ul class="options">
+          <li><label><input type="radio" name="q7" value="a"> a) Atuação na Enfermaria de Cardiologia e UTI do HAOC, além de participação em serviços de Hemodinâmica, Eletrofisiologia e Teste Ergométrico.</label></li>
+          <li><label><input type="radio" name="q7" value="b"> b) Associação com a Sociedade Brasileira das Ligas Acadêmicas de Cardiologia, que oferece cortesia em Congressos Nacionais e Internacionais.</label></li>
+          <li><label><input type="radio" name="q7" value="c"> c) Parceria com as Monitorias de ECG.</label></li>
+          <li><label><input type="radio" name="q7" value="d"> d) Todas as alternativas estão corretas</label></li>
+        </ul>
+      </div>
+
+      <div class="question">
+        <h2>8. A Liga Acadêmica de Cardiologia e Hipertensão incentiva a produção científica e a participação em eventos. Quais dessas atividades fazem parte do nosso portfólio?</h2>
+        <ul class="options">
+          <li><label><input type="radio" name="q8" value="a"> a) Desenvolvimento de Relatos de Caso, Revisões Sistemáticas e Meta-análises</label></li>
+          <li><label><input type="radio" name="q8" value="b"> b) Participação especial no Congresso Paulista de Clínica Médica e na American Heart Association</label></li>
+          <li><label><input type="radio" name="q8" value="c"> c) Projeto de Extensão na Sociedade de Medicina e Cirurgia de Campinas.</label></li>
+          <li><label><input type="radio" name="q8" value="d"> d) Todas as alternativas estão corretas</label></li>
+        </ul>
+      </div>
+
+      <div class="question">
+        <h2>9. O que você pode aprender na Liga Acadêmica de Cardiologia e Hipertensão para se tornar um médico de excelência?</h2>
+        <ul class="options">
+          <li><label><input type="radio" name="q9" value="a"> a) A trabalhar em equipe, porque medicina é coisa de time – juntos, sempre somos mais fortes!</label></li>
+          <li><label><input type="radio" name="q9" value="b"> b) A tomar decisões clínicas baseadas em evidências, mas nunca esquecendo que cada paciente tem uma história única</label></li>
+          <li><label><input type="radio" name="q9" value="c"> c) A desenvolver raciocínio crítico, sabendo balancear o que a ciência diz com o cuidado e atenção que cada paciente merece</label></li>
+          <li><label><input type="radio" name="q9" value="d"> d) Todas as alternativas estão corretas</label></li>
+        </ul>
+      </div>
+
+      <div class="question">
+        <h2>10. Participar da Liga Acadêmica de Cardiologia e Hipertensão é:</h2>
+        <ul class="options">
+          <li><label><input type="radio" name="q10" value="a"> a) Se envolver com um grupo incrível de pessoas que compartilham não só o amor pela cardiologia, mas também pela alegria de aprender juntos!</label></li>
+          <li><label><input type="radio" name="q10" value="b"> b) Sentir aquele friozinho na barriga ao aplicar seus conhecimentos em situações reais, enquanto constrói memórias incríveis com a equipe</label></li>
+          <li><label><input type="radio" name="q10" value="c"> c) Celebrar cada pequeno avanço, seja em um evento ou em um caso clínico, e ver seu crescimento de forma emocionante!</label></li>
+          <li><label><input type="radio" name="q10" value="d"> d) Todas as alternativas estão corretas</label></li>
+        </ul>
+      </div>
+
+      <button type="submit">Enviar Respostas</button>
+    </form>
+    
+    <div id="result"></div>
+
+    <div class="ad">
+      <h3>Quer aprender mais sobre cardiologia?</h3>
+      <p>Participe da Liga Acadêmica de Cardiologia e Hipertensão da Unimax! Acesse nossa página para conhecer nossas atividades, eventos e oportunidades de estágio.</p>
+      <a href="https://www.unimax.br/liga-cardiologia" target="_blank">Clique aqui para saber mais!</a>
+    </div>
+
+    <div class="final-message">
+      <h2>Obrigado por participar!</h2>
+      <p>Junte-se a nós e transforme sua paixão em excelência médica!</p>
+    </div>
+  </div>
+
+  <script>
+    // Respostas corretas
+    const answers = {
+      q1: 'c',
+      q2: 'd',
+      q3: 'c',
+      q4: 'a',
+      q5: 'a',
+      q6: 'c',
+      q7: 'd',
+      q8: 'd',
+      q9: 'd',
+      q10: 'd'
+    };
+
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      const total = Object.keys(answers).length;
+      for (let key in answers) {
+        const userAnswer = document.querySelector('input[name="'+key+'"]:checked');
+        if (userAnswer && userAnswer.value === answers[key]) {
+          score++;
+        }
+      }
+      document.getElementById('result').innerHTML = '<h2>Você acertou ' + score + ' de ' + total + ' perguntas!</h2>';
+    });
+  </script>
+</body>
+</html>
